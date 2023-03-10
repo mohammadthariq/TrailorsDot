@@ -1,11 +1,11 @@
 const express = require("express");
+require("dotenv").config();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const app = express();
-
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =
-  "mongodb+srv://shenbasv98:TrailorsDot@trailorsdot.5kfvhrr.mongodb.net/?retryWrites=true&w=majority";
+
+const uri = process.env.MONGOOSE_URI;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
