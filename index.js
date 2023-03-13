@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const routeBanner = require("./src/routes/bannerRoutes");
+const routeList = require("./src/routes/listRoutes");
 
 //Mongodb connection
 const uri = process.env.MONGOOSE_URI;
@@ -27,4 +28,4 @@ app.use(bodyParser.json());
 // const Port = process.env.PORT || 8080;
 app.listen(8080, () => console.log(`Server is Running Successfully on 8080`));
 
-app.use("/api/banner", routeBanner);
+app.use("/api", routeBanner, routeList);
