@@ -25,7 +25,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/uploads", express.static("uploads"));
 app.use(bodyParser.json());
 
-// const Port = process.env.PORT || 8080;
-app.listen(8080, () => console.log(`Server is Running Successfully on 8080`));
+app.listen(5000, () => console.log(`Server is Running Successfully on 5000`));
 
 app.use("/api", routeBanner, routeList);
